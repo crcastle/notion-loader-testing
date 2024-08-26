@@ -1,22 +1,13 @@
 ---
-import type { GetStaticPaths } from "astro";
-import { getCollection, getEntry, render, type CollectionEntry } from "astro:content";
+import { getCollection, render } from "astro:content";
 
-export const getStaticPaths = (async () => {
-  const pages = await getCollection("database");
-  return pages.map((page) => (
-    {
-      params: {
-        guid: page.id,
-      },
-      props: { page },
-    }
-  ));
-}) satisfies GetStaticPaths;
+const database = await getCollection("database");
+const page = database.find((page) => page.id === Astro.params.guid);
 
-type Props = { page: CollectionEntry<"database"> };
+if (!page) {
+  return new Response(null, { status: 404 });
+}
 
-const { page } = Astro.props;
 const { Content } = await render(page);
 ---
 <Content />
