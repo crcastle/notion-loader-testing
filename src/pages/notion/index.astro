@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+
+const pages = await getCollection("database");
+---
+<ul>
+  {pages.map((page) => ( 
+    <li>
+      <a href={ "/notion/" + page.id}>
+        {page.data.properties.Name.title[0].plain_text}
+      </a>
+    </li>
+  ))}
+</ul>
+
+<p style="max-width: 50vw;">
+  The above content was pulled in at build from the below linked Notion database using Astro 4.14's new Content Layer API.
+  <a href={"https://crcastle.notion.site/" + import.meta.env.NOTION_DATABASE_ID}>
+    {"https://crcastle.notion.site/" + import.meta.env.NOTION_DATABASE_ID}
+  </a>
+</p>

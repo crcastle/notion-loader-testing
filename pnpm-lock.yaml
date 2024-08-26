@@ -15,8 +15,8 @@ importers:
         specifier: ^4.14.5
         version: 4.14.5(@types/node@22.5.0)(rollup@4.21.0)(typescript@5.5.4)
       notion-astro-loader:
-        specifier: ^0.1.0
-        version: 0.1.0(astro@4.14.5(@types/node@22.5.0)(rollup@4.21.0)(typescript@5.5.4))
+        specifier: github:crcastle/notion-astro-loader
+        version: https://codeload.github.com/crcastle/notion-astro-loader/tar.gz/6f37515fa3ed62d5fe7ed47ee5fbf9358abee22b(astro@4.14.5(@types/node@22.5.0)(rollup@4.21.0)(typescript@5.5.4))
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -1422,8 +1422,9 @@ packages:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
 
-  notion-astro-loader@0.1.0:
-    resolution: {integrity: sha512-SOs0nw8Qm4htRQ+LMkDgJDF/39dSAcjKlaZOt/GUAOZqzZ7x7iu//6CHf8kGjM1VgekCbp/1GbOhEp1rOUz1yg==}
+  notion-astro-loader@https://codeload.github.com/crcastle/notion-astro-loader/tar.gz/6f37515fa3ed62d5fe7ed47ee5fbf9358abee22b:
+    resolution: {tarball: https://codeload.github.com/crcastle/notion-astro-loader/tar.gz/6f37515fa3ed62d5fe7ed47ee5fbf9358abee22b}
+    version: 0.1.0
     engines: {node: '>=18'}
     peerDependencies:
       astro: ^4.14.0
@@ -3736,7 +3737,7 @@ snapshots:
 
   normalize-path@3.0.0: {}
 
-  notion-astro-loader@0.1.0(astro@4.14.5(@types/node@22.5.0)(rollup@4.21.0)(typescript@5.5.4)):
+  notion-astro-loader@https://codeload.github.com/crcastle/notion-astro-loader/tar.gz/6f37515fa3ed62d5fe7ed47ee5fbf9358abee22b(astro@4.14.5(@types/node@22.5.0)(rollup@4.21.0)(typescript@5.5.4)):
     dependencies:
       '@jsdevtools/rehype-toc': 3.0.2
       '@notionhq/client': 2.2.15
